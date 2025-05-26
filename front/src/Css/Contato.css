@@ -1,0 +1,93 @@
+.contato-container {
+  background: linear-gradient(to bottom, #111111, #1a1a1a);
+  color: white;
+  min-height: 100vh;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #ff8300;
+}
+
+.intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.card {
+  background-color: #000;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(255, 131, 0, 0.4);
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.foto {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid #ff8300;
+}
+
+.linkedin-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ff8300;
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.linkedin-link:hover {
+  background-color: #ff6200;
+}
+
+/* Ondas no fundo */
+.contato-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200px;
+  background: radial-gradient(circle at 50% 50%, #ff8300 0%, transparent 70%);
+  opacity: 0.1;
+  animation: wave 8s linear infinite;
+  transform: rotate(-15deg);
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0) rotate(-15deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(-15deg);
+  }
+}
