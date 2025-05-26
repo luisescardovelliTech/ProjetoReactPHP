@@ -1,0 +1,102 @@
+.servicos-container {
+  background: linear-gradient(to bottom, #111111, #1a1a1a);
+  color: white;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #ff8300;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: #ccc;
+}
+
+.servicos-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto {
+  max-width: 600px;
+  flex: 1;
+}
+
+.texto h2 {
+  font-size: 2rem;
+  color: #ff8300;
+  margin-bottom: 20px;
+}
+
+.texto h3 {
+  margin-top: 30px;
+  color: #ffb347;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.texto p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.texto ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.texto ul li {
+  background-color: #222;
+  padding: 12px 18px;
+  margin-bottom: 12px;
+  border-left: 5px solid #ff8300;
+  border-radius: 5px;
+  color: #eee;
+  font-weight: 500;
+}
+
+.imagem img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 131, 0, 0.4);
+}
+
+/* Fundo com pequenas ondas laranjas animadas */
+.servicos-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200px;
+  background: radial-gradient(circle at 50% 50%, #ff8300 0%, transparent 70%);
+  opacity: 0.08;
+  animation: wave 10s linear infinite;
+  transform: rotate(-15deg);
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0) rotate(-15deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(-15deg);
+  }
+}
