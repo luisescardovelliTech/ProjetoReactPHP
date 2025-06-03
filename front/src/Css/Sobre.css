@@ -89,7 +89,6 @@
   color: #ccc;
 }
 
-/* Fundo com efeito */
 .sobre-container::before {
   content: "";
   position: absolute;

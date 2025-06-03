@@ -1,10 +1,24 @@
-/* Estilo principal */
 .gestao-container {
-  background: linear-gradient(to right, #2e005d, #5c008b);
+  background: linear-gradient(to bottom, #111111, #1a1a1a);
   color: white;
   min-height: 100vh;
   padding: 40px 20px;
   font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.gestao-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200px;
+  background: radial-gradient(circle at 50% 50%, #ff8300 0%, transparent 70%);
+  opacity: 0.08;
+  animation: wave 8s linear infinite;
+  transform: rotate(-15deg);
 }
 
 h1 {
@@ -57,7 +71,7 @@ form button:hover {
   background-color: #ff8300;
 }
 
-/* Tabela de transações */
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -102,7 +116,7 @@ th, td {
   color: #ff5050;
 }
 
-/* Responsividade */
+
 @media (max-width: 600px) {
   table, thead, tbody, th, td, tr {
     display: block;
@@ -131,16 +145,14 @@ th, td {
   }
 }
 
-
-/* Estilo dos botões no formulário */
 .botoes-form {
   display: flex;
-  gap: 12px; /* Espaçamento entre os botões */
+  gap: 12px; 
   margin-top: 10px;
 }
 
 .botoes-form button {
-  flex: 1; /* Os botões ficam do mesmo tamanho */
+  flex: 1; 
   padding: 12px;
   font-weight: bold;
   border-radius: 8px;
@@ -151,7 +163,6 @@ th, td {
   font-size: 1rem;
 }
 
-/* Botão registrar */
 .btn-registrar {
   background-color: #ff6200;
 }
@@ -160,7 +171,6 @@ th, td {
   background-color: #ff8300;
 }
 
-/* Botão atualizar */
 .btn-atualizar {
   background-color: #007bff;
 }
@@ -169,7 +179,6 @@ th, td {
   background-color: #0056b3;
 }
 
-/* Botão cancelar */
 .btn-cancelar {
   background-color: #6c757d;
 }
@@ -178,7 +187,6 @@ th, td {
   background-color: #5a6268;
 }
 
-/* Botões da tabela */
 .acoes button {
   padding: 6px 10px;
   margin-right: 6px;

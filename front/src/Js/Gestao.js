@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import '../Css/Gestao.css';
+import React, { useState, useEffect } from "react";
+import "../Css/Gestao.css";
 
 export default function Gestao() {
   const [financa, setFinanca] = useState({
-    tipo: 'entrada',
-    descricao: '',
-    valor: '',
-    data: ''
+    tipo: "entrada",
+    descricao: "",
+    valor: "",
+    data: "",
   });
 
   const [financas, setFinancas] = useState([]);
@@ -15,11 +15,13 @@ export default function Gestao() {
 
   const carregarFinancas = async () => {
     try {
-      const response = await fetch('http://localhost/TrabalhoJamesSergio/back/classe/Financa.php');
+      const response = await fetch(
+        "http://localhost/TrabalhoJamesSergio/back/classe/Financa.php"
+      );
       const dados = await response.json();
       setFinancas(dados.financas || []);
     } catch (error) {
-      console.error('Erro ao carregar finanças:', error);
+      console.error("Erro ao carregar finanças:", error);
     }
   };
 
@@ -30,24 +32,29 @@ export default function Gestao() {
   const handleFinancaSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = 'http://localhost/TrabalhoJamesSergio/back/classe/Financa.php';
-      const method = modoEdicao ? 'PUT' : 'POST';
-      const body = JSON.stringify(modoEdicao ? { id: idEdicao, ...financa } : { acao: 'financa', ...financa });
+      const url =
+        "http://localhost/TrabalhoJamesSergio/back/classe/Financa.php";
+      const method = modoEdicao ? "PUT" : "POST";
+      const body = JSON.stringify(
+        modoEdicao
+          ? { id: idEdicao, ...financa }
+          : { acao: "financa", ...financa }
+      );
 
       const response = await fetch(url, {
         method,
-        headers: { 'Content-Type': 'application/json' },
-        body
+        headers: { "Content-Type": "application/json" },
+        body,
       });
 
       const data = await response.json();
       alert(data.mensagem);
 
       setFinanca({
-        tipo: 'entrada',
-        descricao: '',
-        valor: '',
-        data: ''
+        tipo: "entrada",
+        descricao: "",
+        valor: "",
+        data: "",
       });
       setModoEdicao(false);
       setIdEdicao(null);
@@ -63,7 +70,7 @@ export default function Gestao() {
       tipo: item.tipo,
       descricao: item.descricao,
       valor: item.valor,
-      data: item.data
+      data: item.data,
     });
     setModoEdicao(true);
     setIdEdicao(item.id);
@@ -72,10 +79,13 @@ export default function Gestao() {
   const excluirFinanca = async (id) => {
     if (window.confirm("Tem certeza que deseja excluir?")) {
       try {
-        const response = await fetch('http://localhost/TrabalhoJamesSergio/back/classe/Financa.php', {
-          method: 'DELETE',
-          body: new URLSearchParams({ id })
-        });
+        const response = await fetch(
+          "http://localhost/TrabalhoJamesSergio/back/classe/Financa.php",
+          {
+            method: "DELETE",
+            body: new URLSearchParams({ id }),
+          }
+        );
         const data = await response.json();
         alert(data.mensagem);
         carregarFinancas();
@@ -87,10 +97,13 @@ export default function Gestao() {
 
   return (
     <div className="gestao-container">
-      <h1>Gestão Financeira</h1>
+      <h1>
+        <br />
+        Gestão Financeira
+      </h1>
 
       <section className="form-section">
-        <h2>{modoEdicao ? 'Editar Finança' : 'Registrar Finança'}</h2>
+        <h2>{modoEdicao ? "Editar Finança" : "Registrar Finança"}</h2>
         <form onSubmit={handleFinancaSubmit}>
           <select
             value={financa.tipo}
@@ -103,7 +116,9 @@ export default function Gestao() {
             type="text"
             placeholder="Descrição"
             value={financa.descricao}
-            onChange={(e) => setFinanca({ ...financa, descricao: e.target.value })}
+            onChange={(e) =>
+              setFinanca({ ...financa, descricao: e.target.value })
+            }
             required
           />
           <input
@@ -120,8 +135,11 @@ export default function Gestao() {
             required
           />
           <div className="botoes-form">
-            <button type="submit" className={modoEdicao ? 'btn-atualizar' : 'btn-registrar'}>
-              {modoEdicao ? 'Atualizar' : 'Registrar'}
+            <button
+              type="submit"
+              className={modoEdicao ? "btn-atualizar" : "btn-registrar"}
+            >
+              {modoEdicao ? "Atualizar" : "Registrar"}
             </button>
             {modoEdicao && (
               <button
@@ -131,10 +149,10 @@ export default function Gestao() {
                   setModoEdicao(false);
                   setIdEdicao(null);
                   setFinanca({
-                    tipo: 'entrada',
-                    descricao: '',
-                    valor: '',
-                    data: ''
+                    tipo: "entrada",
+                    descricao: "",
+                    valor: "",
+                    data: "",
                   });
                 }}
               >
@@ -162,16 +180,34 @@ export default function Gestao() {
             </thead>
             <tbody>
               {financas.map((item, index) => (
-                <tr key={item.id} className={index % 2 === 0 ? 'linha-par' : 'linha-impar'}>
-                  <td className={`tipo ${item.tipo}`}>{item.tipo === 'entrada' ? '⬆ Entrada' : '⬇ Saída'}</td>
+                <tr
+                  key={item.id}
+                  className={index % 2 === 0 ? "linha-par" : "linha-impar"}
+                >
+                  <td className={`tipo ${item.tipo}`}>
+                    {item.tipo === "entrada" ? "⬆ Entrada" : "⬇ Saída"}
+                  </td>
                   <td>{item.descricao}</td>
                   <td className={`valor ${item.tipo}`}>
-                    R$ {parseFloat(item.valor).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                    R${" "}
+                    {parseFloat(item.valor).toLocaleString("pt-BR", {
+                      minimumFractionDigits: 2,
+                    })}
                   </td>
-                  <td>{new Date(item.data).toLocaleDateString('pt-BR')}</td>
+                  <td>{new Date(item.data).toLocaleDateString("pt-BR")}</td>
                   <td className="acoes">
-                    <button className="btn-editar" onClick={() => editarFinanca(item)}>Editar</button>
-                    <button className="btn-excluir" onClick={() => excluirFinanca(item.id)}>Excluir</button>
+                    <button
+                      className="btn-editar"
+                      onClick={() => editarFinanca(item)}
+                    >
+                      Editar
+                    </button>
+                    <button
+                      className="btn-excluir"
+                      onClick={() => excluirFinanca(item.id)}
+                    >
+                      Excluir
+                    </button>
                   </td>
                 </tr>
               ))}

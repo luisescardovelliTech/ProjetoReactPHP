@@ -1,9 +1,8 @@
-import '../Css/Contato.css';
-import React from 'react';
+import "../Css/Contato.css";
+import React from "react";
 
-// Imagens
-import CavasImage from '../Imgs/Cavas.jpg';
-import LuisImage from '../Imgs/Luis.jpg';
+import CavasImage from "../Imgs/Cavas.jpg";
+import LuisImage from "../Imgs/Luis.jpg";
 
 export default function Contato() {
   return (
@@ -11,17 +10,21 @@ export default function Contato() {
       <h1 className="titulo">Contato</h1>
 
       <p className="intro">
-        Conheça os desenvolvedores por trás deste sistema de gestão financeira. Cada um de nós contribuiu com dedicação e paixão por tecnologia.
+        Conheça os desenvolvedores por trás deste sistema de gestão financeira.
+        Cada um de nós contribuiu com dedicação e paixão por tecnologia.
       </p>
 
       <div className="cards">
-        {/* João Pedro Cavalaro Pereira */}
         <div className="card">
-          <img src={CavasImage} alt="João Pedro Cavalaro Pereira" className="foto" />
+          <img
+            src={CavasImage}
+            alt="João Pedro Cavalaro Pereira"
+            className="foto"
+          />
           <h2>João Pedro Cavalaro Pereira</h2>
           <p>💼 Desenvolvedor Full Stack | Atos</p>
           <p>🎓 Estudante de TDS</p>
-          <p>🌍 Localização: Limeira - SP</p>
+          <p>🌍 Localização: Araçatuba - SP</p>
           <p>💡 Interesses: Backend, automações, música e esportes</p>
           <p>🛠️ Tecnologias: React, PHP, MySQL, Python</p>
           <a
@@ -34,13 +37,16 @@ export default function Contato() {
           </a>
         </div>
 
-        {/* Luis Escardovelli */}
         <div className="card">
-          <img src={LuisImage} alt="Luis Felipe Escardovelli" className="foto" />
+          <img
+            src={LuisImage}
+            alt="Luis Felipe Escardovelli"
+            className="foto"
+          />
           <h2>Luis Felipe Escardovelli</h2>
-          <p>💼 Desenvolvedor Full Stack Unisalesiano</p>
+          <p>💼 Desenvolvedor Full Stack</p>
           <p>🎓 Estudante de TDS</p>
-          <p>🌍 Localização: Americana - SP</p>
+          <p>🌍 Localização: Penápolis - SP</p>
           <p>💡 Interesses: Frontend, UI/UX, videogames e café</p>
           <p>🛠️ Tecnologias: React, JavaScript, Node.js</p>
           <a

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import '../Css/Navbar.css'; 
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "../Css/Navbar.css";
 
 const Navbar = () => {
   const [aberto, setAberto] = useState(false);
@@ -10,18 +10,16 @@ const Navbar = () => {
     setAberto(!aberto);
   };
 
-
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (aberto && !e.target.closest('.navbar')) {
+      if (aberto && !e.target.closest(".navbar")) {
         setAberto(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [aberto]);
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,21 +30,25 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
           <span>Organiza Grana</span>
         </div>
-        
-        <button className="navbar-toggle" onClick={abrirFechar} aria-label={aberto ? "Fechar menu" : "Abrir menu"}>
-          {aberto ? '✕' : '☰'}
+
+        <button
+          className="navbar-toggle"
+          onClick={abrirFechar}
+          aria-label={aberto ? "Fechar menu" : "Abrir menu"}
+        >
+          {aberto ? "✕" : "☰"}
         </button>
-        
+
         <ul className={`navbar-links ${aberto ? "active" : ""}`}>
           <li>
             <NavLink to="/" onClick={() => setAberto(false)}>
@@ -84,14 +86,9 @@ const Navbar = () => {
   );
 };
 
-
 const NavLink = ({ to, children, onClick }) => {
   return (
-    <Link 
-      to={to} 
-      className="nav-link"
-      onClick={onClick}
-    >
+    <Link to={to} className="nav-link" onClick={onClick}>
       {children}
     </Link>
   );

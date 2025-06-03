@@ -1,21 +1,20 @@
-import '../Css/Servicos.css';
+import "../Css/Servicos.css";
 
 export default function Servicos() {
   return (
     <div className="servicos-container">
-      {/* Hero Section */}
       <section className="hero">
         <h1>Serviços</h1>
         <p>Um app simples e eficiente para organizar sua vida financeira</p>
       </section>
 
-      {/* Conteúdo */}
       <section className="servicos-conteudo">
         <div className="texto">
           <h2>Para que serve nosso sistema?</h2>
           <p>
-            Nosso aplicativo foi desenvolvido para ajudar você a gerenciar suas finanças pessoais 
-            de maneira prática, permitindo que você controle receitas, despesas e visualize sua saúde financeira facilmente.
+            Nosso aplicativo foi desenvolvido para ajudar você a gerenciar suas
+            finanças pessoais de maneira prática, permitindo que você controle
+            receitas, despesas e visualize sua saúde financeira facilmente.
           </p>
 
           <h3>Vantagens de organizar sua vida financeira</h3>
