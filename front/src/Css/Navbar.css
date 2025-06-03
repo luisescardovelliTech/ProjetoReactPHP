@@ -98,7 +98,7 @@
   left: 0;
   width: 0;
   height: 3px;
-  background: linear-gradient(90deg, #4dabf7, #74c0fc);
+  background: linear-gradient(90deg, #ff8300, #ffa749);
   border-radius: 2px;
   transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
