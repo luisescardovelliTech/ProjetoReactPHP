@@ -1,12 +1,12 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './pages/Navbar.js';
-import Gestao from './pages/Gestao.js';
-import Teste from './pages/Teste.js';
-import Sobre from './pages/Sobre.js';
-import Contato from './pages/Contato.js';
-import Servicos from './pages/Servicos.js';
-import Index from './pages/Index.js'; 
+import Navbar from './Js/Navbar.js';
+import Gestao from './Js/Gestao.js';
+import Teste from './Js/Teste.js';
+import Sobre from './Js/Sobre.js';
+import Contato from './Js/Contato.js';
+import Servicos from './Js/Servicos.js';
+import Index from './Js/Index.js'; 
 
 function App() {
   return (
